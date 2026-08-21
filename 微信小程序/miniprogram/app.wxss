@@ -1,0 +1,23 @@
+page {
+  background: #f5f6fa;
+  min-height: 100vh;
+  color: #333333;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.container {
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+button::after {
+  border: none;
+}

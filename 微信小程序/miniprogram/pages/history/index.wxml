@@ -1,0 +1,42 @@
+<scroll-view scroll-y class="page">
+  <view class="sync-bar">
+    <text class="sync-source">{{sourceText}}</text>
+    <text class="sync-text">{{syncText}}</text>
+    <view class="sync-btn {{isSyncing ? 'sync-btn-disabled' : ''}}" bindtap="syncFlashHistory">{{isSyncing ? '同步中' : '同步Flash'}}</view>
+  </view>
+
+  <view class="module">
+    <view class="module-header">
+      <view class="module-title">
+        <text class="module-icon">📈</text>
+        <text class="module-name">温度趋势</text>
+      </view>
+      <text class="module-count">最近{{count}}条记录</text>
+    </view>
+    <canvas type="2d" id="tempCanvas" class="chart"></canvas>
+  </view>
+
+  <view class="module">
+    <view class="module-header">
+      <view class="module-title">
+        <text class="module-icon">💧</text>
+        <text class="module-name">湿度趋势</text>
+      </view>
+    </view>
+    <canvas type="2d" id="humCanvas" class="chart"></canvas>
+  </view>
+
+  <view class="module">
+    <view class="module-header">
+      <view class="module-title">
+        <text class="module-icon">💨</text>
+        <text class="module-name">烟雾数值趋势</text>
+      </view>
+    </view>
+    <canvas type="2d" id="smokeCanvas" class="chart"></canvas>
+  </view>
+
+  <view class="empty" wx:if="{{count === 0}}">
+    <text class="empty-text">暂无数据，请先在仪表盘查看数据</text>
+  </view>
+</scroll-view>

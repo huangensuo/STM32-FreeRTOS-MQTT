@@ -1,0 +1,98 @@
+.page {
+  padding: 20rpx 16rpx;
+  background: #f5f6fa;
+  min-height: 100vh;
+}
+
+.sync-bar {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  background: #ffffff;
+  border-radius: 12rpx;
+  padding: 16rpx 18rpx;
+  margin-bottom: 18rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.sync-source {
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #333;
+  flex-shrink: 0;
+}
+
+.sync-text {
+  font-size: 24rpx;
+  color: #888;
+  flex: 1;
+  min-width: 0;
+}
+
+.sync-btn {
+  font-size: 24rpx;
+  color: #ffffff;
+  background: #4CAF50;
+  border-radius: 8rpx;
+  padding: 8rpx 14rpx;
+  flex-shrink: 0;
+}
+
+.sync-btn-disabled {
+  background: #9e9e9e;
+}
+
+.module {
+  background: #ffffff;
+  border-radius: 14rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.module-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.module-title {
+  display: flex;
+  align-items: center;
+}
+
+.module-icon {
+  font-size: 36rpx;
+  margin-right: 12rpx;
+}
+
+.module-name {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.module-count {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.chart {
+  width: 100%;
+  height: 360rpx;
+  background: #fafafa;
+  border-radius: 12rpx;
+}
+
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60rpx 0;
+}
+
+.empty-text {
+  font-size: 28rpx;
+  color: #999;
+}

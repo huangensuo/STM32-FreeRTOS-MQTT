@@ -1,0 +1,5 @@
+{
+  "name": "onenetProxy",
+  "version": "1.0.0",
+  "description": "OneNET data proxy + minimal MQTT publisher"
+}

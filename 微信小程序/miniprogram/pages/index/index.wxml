@@ -1,0 +1,101 @@
+<scroll-view scroll-y class="page">
+  <view class="header">
+    <text class="header-title">环境监测系统</text>
+    <view class="status-dot {{isConnected ? 'online' : 'offline'}}"></view>
+  </view>
+
+  <view class="cards-row">
+    <view class="card card-purple">
+      <text class="card-value">{{temp}}<text class="card-unit">℃</text></text>
+      <text class="card-label">温度</text>
+    </view>
+    <view class="card card-cyan">
+      <text class="card-value">{{hum}}<text class="card-unit">%</text></text>
+      <text class="card-label">湿度</text>
+    </view>
+    <view class="card card-orange">
+      <text class="card-value">{{smokeValue}}<text class="card-unit">ADC</text></text>
+      <text class="card-label">烟雾数值</text>
+    </view>
+  </view>
+
+  <view class="status-list">
+    <view class="status-item">
+      <text class="status-name">火焰检测</text>
+      <text class="status-tag {{flame ? 'warn' : 'ok'}}">{{flame ? '异常' : '正常'}}</text>
+    </view>
+    <view class="status-item">
+      <text class="status-name">烟雾检测</text>
+      <text class="status-tag {{smoke ? 'warn' : 'ok'}}">{{smoke ? '异常' : '正常'}}</text>
+    </view>
+    <view class="status-item">
+      <text class="status-name">系统状态</text>
+      <text class="status-tag {{stateClass}}">{{stateText}}</text>
+    </view>
+  </view>
+
+  <view class="ai-section">
+    <text class="section-title">AI环境分析</text>
+    <view class="ai-box">
+      <text class="ai-badge {{safetyClass}}">{{safetyLevel}}</text>
+      <text class="ai-text">{{aiAnalysis}}</text>
+    </view>
+  </view>
+
+  <view class="control-section">
+    <text class="section-title">设备控制</text>
+    <view class="control-grid">
+      <view class="ctrl-btn" bindtap="onSendCommand" data-service="relay" data-params='{"switch":1}'>
+        <text class="ctrl-icon">🌀</text>
+        <text class="ctrl-text">风扇开</text>
+      </view>
+      <view class="ctrl-btn" bindtap="onSendCommand" data-service="relay" data-params='{"switch":0}'>
+        <text class="ctrl-icon">⏹</text>
+        <text class="ctrl-text">风扇关</text>
+      </view>
+      <view class="ctrl-btn" bindtap="onSendCommand" data-service="buzzer" data-params='{"switch":1}'>
+        <text class="ctrl-icon">🔔</text>
+        <text class="ctrl-text">蜂鸣开</text>
+      </view>
+      <view class="ctrl-btn" bindtap="onSendCommand" data-service="buzzer" data-params='{"switch":0}'>
+        <text class="ctrl-icon">🔕</text>
+        <text class="ctrl-text">蜂鸣关</text>
+      </view>
+      <view class="ctrl-btn" bindtap="onSendCommand" data-service="led" data-params='{"switch":1}'>
+        <text class="ctrl-icon">💡</text>
+        <text class="ctrl-text">LED开</text>
+      </view>
+      <view class="ctrl-btn" bindtap="onSendCommand" data-service="led" data-params='{"switch":0}'>
+        <text class="ctrl-icon">⬛</text>
+        <text class="ctrl-text">LED关</text>
+      </view>
+      <view class="ctrl-btn" bindtap="onSendCommand" data-service="rgb" data-params='{"color":"red"}'>
+        <text class="ctrl-icon">🔴</text>
+        <text class="ctrl-text">红灯</text>
+      </view>
+      <view class="ctrl-btn" bindtap="onSendCommand" data-service="rgb" data-params='{"color":"green"}'>
+        <text class="ctrl-icon">🟢</text>
+        <text class="ctrl-text">绿灯</text>
+      </view>
+      <view class="ctrl-btn" bindtap="onSendCommand" data-service="rgb" data-params='{"color":"blue"}'>
+        <text class="ctrl-icon">🔵</text>
+        <text class="ctrl-text">蓝灯</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="action-row">
+    <view class="action-btn action-btn-left" bindtap="onAiAnalyze">
+      <text class="action-btn-icon">🤖</text>
+      <text class="action-btn-text">AI分析</text>
+    </view>
+    <view class="action-btn action-btn-right" bindtap="refreshData">
+      <text class="action-btn-icon">🔄</text>
+      <text class="action-btn-text">刷新数据</text>
+    </view>
+  </view>
+
+  <view class="footer-time">更新时间：{{refreshTime}}</view>
+
+  <view class="safe-area-bottom"></view>
+</scroll-view>
